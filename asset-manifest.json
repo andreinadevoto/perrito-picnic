@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/perrito-picnic/static/css/main.2c334765.css",
+    "main.js": "/perrito-picnic/static/js/main.5b034d2d.js",
+    "static/js/787.e75b3949.chunk.js": "/perrito-picnic/static/js/787.e75b3949.chunk.js",
+    "index.html": "/perrito-picnic/index.html",
+    "main.2c334765.css.map": "/perrito-picnic/static/css/main.2c334765.css.map",
+    "main.5b034d2d.js.map": "/perrito-picnic/static/js/main.5b034d2d.js.map",
+    "787.e75b3949.chunk.js.map": "/perrito-picnic/static/js/787.e75b3949.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2c334765.css",
+    "static/js/main.5b034d2d.js"
+  ]
+}
