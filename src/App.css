@@ -6,7 +6,9 @@
 }
 
 .App {
-  height: 100vh;
+  height: 100%;
+  min-height: -webkit-fill-available;
+  min-height: 100vh;
   background-color: var(--background);
   font-family: "Roboto Mono", monospace;
 }
@@ -35,7 +37,7 @@
 }
 
 .container-question {
-  margin: 0 5vh 5vh;
+  padding: 0 5vh 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -105,7 +107,8 @@ button {
 
 .results {
   height: 25vh;
-  width: 40vw;
+  width: calc(40vw - 40px);
+  padding: 20px;
   color: var(--text);
 
   background-color: var(--accent);
@@ -117,6 +120,7 @@ button {
   border-radius: 15px;
   font-size: 18px;
   font-style: italic;
+  text-align: center;
 }
 
 .container-results {

@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const preguntas = [
   {
@@ -187,11 +187,10 @@ function generarNumerosAleatorios() {
   var numeros = [];
 
   while (numeros.length < 10) {
-    var numeroAleatorio = Math.floor(Math.random() * 19); // Genera un número aleatorio entre 0 y 25
+    var numeroAleatorio = Math.floor(Math.random() * 19);
 
-    // Verifica si el número aleatorio no está en el array
     if (numeros.indexOf(numeroAleatorio) === -1) {
-      numeros.push(numeroAleatorio); // Agrega el número aleatorio al array
+      numeros.push(numeroAleatorio);
     }
   }
 
