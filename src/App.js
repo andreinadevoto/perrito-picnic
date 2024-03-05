@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const preguntas = [
   {
@@ -89,10 +89,121 @@ const preguntas = [
     respuesta: "Si",
     explicacion: "Los perros pueden comer pescado cocido y sin espinas.",
   },
+  {
+    id: 10,
+    pregunta: "¿Los perros pueden comer chocolate blanco?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "Aunque el chocolate blanco contiene menos teobromina que otros tipos de chocolate, aún puede ser peligroso para los perros y es mejor evitarlo.",
+  },
+  {
+    id: 11,
+    pregunta: "¿Los perros pueden comer pan?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "Si",
+    explicacion:
+      "Los perros pueden comer pan en pequeñas cantidades como un tratamiento ocasional, pero no debe ser una parte regular de su dieta.",
+  },
+  {
+    id: 12,
+    pregunta: "¿Los perros pueden comer alimentos picantes?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "Los alimentos picantes pueden irritar el estómago del perro, causando malestar y problemas digestivos.",
+  },
+  {
+    id: 13,
+    pregunta: "¿Los perros pueden comer lácteos como el queso?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "Si",
+    explicacion:
+      "Algunos perros pueden tolerar pequeñas cantidades de lácteos como el queso, pero otros pueden ser intolerantes a la lactosa.",
+  },
+  {
+    id: 14,
+    pregunta: "¿Los perros pueden comer huevo?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "Si",
+    explicacion:
+      "Los perros pueden comer huevo cocido, ya que es una excelente fuente de proteínas y nutrientes esenciales. Sin embargo, los huevos crudos pueden ser perjudiciales debido al riesgo de salmonela.",
+  },
+  {
+    id: 15,
+    pregunta: "¿Los perros pueden comer manzanas?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "Si",
+    explicacion:
+      "Las manzanas son seguras y saludables para los perros, siempre que se les retiren las semillas y el corazón, ya que pueden contener trazas de cianuro.",
+  },
+  {
+    id: 16,
+    pregunta: "¿Los perros pueden comer comida para gatos?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "La comida para gatos está formulada específicamente para las necesidades nutricionales de los gatos, que son diferentes a las de los perros.",
+  },
+  {
+    id: 17,
+    pregunta: "¿Los perros pueden comer alimentos con cafeína?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "La cafeína es peligrosa para los perros y puede causar problemas nerviosos, cardiacos y hasta la muerte.",
+  },
+  {
+    id: 18,
+    pregunta: "¿Los perros pueden comer papas crudas?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "Las papas crudas pueden ser difíciles de digerir para los perros y contienen solanina, una sustancia que puede ser tóxica en grandes cantidades.",
+  },
+  {
+    id: 19,
+    pregunta: "¿Los perros pueden tener una dieta vegana?",
+    opcion1: "Si",
+    opcion2: "No",
+    respuesta: "No",
+    explicacion:
+      "Los perros necesitan proteínas animales y otros nutrientes que no se encuentran en una dieta vegana para mantenerse saludables. Es importante consultar a un veterinario antes de hacer cambios significativos en la dieta de un perro.",
+  },
 ];
 
+var arrayAleatorio = [];
+
+function generarNumerosAleatorios() {
+  var numeros = [];
+
+  while (numeros.length < 10) {
+    var numeroAleatorio = Math.floor(Math.random() * 19); // Genera un número aleatorio entre 0 y 25
+
+    // Verifica si el número aleatorio no está en el array
+    if (numeros.indexOf(numeroAleatorio) === -1) {
+      numeros.push(numeroAleatorio); // Agrega el número aleatorio al array
+    }
+  }
+
+  return numeros;
+}
+
+arrayAleatorio = generarNumerosAleatorios();
+console.log(arrayAleatorio);
+
 function App() {
-  const [numPregunta, setNumPregunta] = useState(0);
+  const [iteracion, setIteracion] = useState(0);
+  const [numPregunta, setNumPregunta] = useState(arrayAleatorio[0]);
   const [displayQuestion, setDisplayQuestion] = useState(true);
   const [displayOptions, setDisplayOptions] = useState(true);
   const [displayResult, setDisplayResult] = useState(false);
@@ -100,21 +211,24 @@ function App() {
   const [incorrectAnswers, setIncorrectAnswers] = useState([]);
 
   const handleSubmit = (event) => {
+    console.log("respuesta", iteracion);
     event.preventDefault();
+    setIteracion((it) => it + 1);
     localStorage.setItem(numPregunta, event.target.value);
-    setNumPregunta((preg) => preg + 1);
+    setNumPregunta(() => arrayAleatorio[iteracion + 1]);
   };
 
   function handleSubmitTest() {
+    console.log("enviado");
     const answers = [];
-
     for (let i = 0; i < 10; i++) {
-      answers.push(localStorage.getItem(i));
-      console.log(answers[i], preguntas[i].respuesta);
-      if (answers[i] === preguntas[i].respuesta) {
+      // console.log(localStorage.getItem(i));
+      answers.push(localStorage.getItem(arrayAleatorio[i]));
+      console.log(answers[i], preguntas[arrayAleatorio[i]].respuesta);
+      if (answers[i] === preguntas[arrayAleatorio[i]].respuesta) {
         setCorrectAnswers((corAnsw) => corAnsw + 1);
-      } else if (answers[i] !== preguntas[i].respuesta) {
-        setIncorrectAnswers((inc) => [...inc, i]);
+      } else if (answers[i] !== preguntas[arrayAleatorio[i]].respuesta) {
+        setIncorrectAnswers((inc) => [...inc, arrayAleatorio[i]]);
       }
     }
 
@@ -133,7 +247,7 @@ function App() {
         </div>
       </div>
       <div className="container-question">
-        {displayQuestion && numPregunta <= 9 && (
+        {displayQuestion && iteracion < 10 && (
           <div>
             <div className="question">
               <p>{preguntas[numPregunta].pregunta}</p>
@@ -159,7 +273,7 @@ function App() {
           </div>
         )}
 
-        {displayOptions && numPregunta > 9 && (
+        {displayOptions && iteracion === 10 && (
           <div className="submit">
             <button className="button-submit" onClick={handleSubmitTest}>
               Obtener resultado del test
