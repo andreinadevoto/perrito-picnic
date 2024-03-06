@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Perrito Picnic
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bienvenido al repositorio de la aplicación **Perrito Picnic**. Esta aplicación es un test interactivo diseñado para desafiar tus conocimientos sobre los alimentos que son seguros o no para los perros. A través de una serie de 10 preguntas, podrás demostrar si sabes lo suficiente sobre la dieta canina para adoptar un perro.
 
-## Available Scripts
+## Características
 
-In the project directory, you can run:
+- **Interactividad**: Responde a preguntas con opciones múltiples para determinar si un alimento es o no seguro para los perros.
+- **Puntuación**: Al final del test, recibirás un resultado basado en cuántas respuestas acertaste, lo que indica si podrías adoptar un perro.
+- **Educacional**: Aprende de manera divertida e interactiva sobre la dieta segura para perros.
 
-### `npm start`
+## Tecnologías Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: Esta aplicación está construida usando React, lo que permite una experiencia de usuario fluida y reactiva.
+- **GitHub Actions**: Utilizamos GitHub Actions para automatizar el despliegue de la aplicación web, asegurando que siempre esté disponible la versión más reciente.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Cómo Jugar
 
-### `npm test`
+Simplemente visita el enlace de la aplicación web, y serás recibido con la primera pregunta. Elige la respuesta que consideres correcta y continúa a través de las 10 preguntas para ver tu resultado final.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Despliegue
 
-### `npm run build`
+Para ver la aplicación en acción, visita [Perrito Picnic](https://andreinadevoto.github.io/perrito-picnic/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contribuir
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Si estás interesado en contribuir a este proyecto, ¡nos encantaría tu ayuda! Puedes clonar este repositorio y enviar tus pull requests.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Licencia
 
-### `npm run eject`
+Esta aplicación es de código abierto bajo la licencia MIT.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¡Esperamos que disfrutes utilizando la Perrito Picnic App y aprendas más sobre la alimentación segura para perros!
